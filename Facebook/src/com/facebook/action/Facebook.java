@@ -40,11 +40,9 @@ public class Facebook extends Utente {
 				for (Utente u : listaUtenti){
 					if (u.getNome().equals(nome) && u.getCognome().equals(cognome) && u.getEta()==eta && u.getSesso()==sesso && u.getEmail().equals(email)){
 						presente = true;
-						System.out.println("Utente gia registrato!");
 						break;
 					}else {	
 						listaUtenti.add(utente);
-						System.out.println("Registrazione avvenuta!");
 						presente = false;
 						break;
 					}
@@ -53,11 +51,11 @@ public class Facebook extends Utente {
 					System.out.println("Utente gia registrato!");
 				}else{
 					listaUtenti.add(utente);
-					System.out.println("Registrazione avvenuta!");
+					System.out.println("Registrazione avvenuta per "+ nome+" "+cognome);
 				}
 			}else {//prima volta
 				listaUtenti.add(utente);
-				System.out.println("Registrazione avvenuta1!");
+				System.out.println("Registrazione avvenuta per "+ nome+" "+cognome);
 			}
 		}
 	}
@@ -66,6 +64,8 @@ public class Facebook extends Utente {
 	public void aggiungiAmici(String nomeCognome1, String nomeCognome2) {
 		Utente utente = null;
 		Utente amico = null;
+		
+		System.out.println();
 		
 		if(nomeCognome1==null || nomeCognome1.isEmpty()){
 			System.out.println("nome obbligatorio! ");
@@ -87,7 +87,9 @@ public class Facebook extends Utente {
 			
 			if ( utente != null && amico != null){
 				utente.inserisciAmico(amico);
+				//System.out.println(utente.getNome()+" e "+amico.getNome()+" hanno stretto amicizia");
 				amico.inserisciAmico(utente);
+				System.out.println(amico.getNome()+" e "+utente.getNome()+" hanno stretto amicizia");
 			}
 		}
 	}
@@ -141,7 +143,6 @@ public class Facebook extends Utente {
 	//
 	public void getAmiciInComune(String utente1, String utente2){
 		
-		//Utente utente = null;
 		List<Utente> amiciUtente1 = null;
 		List<Utente> amiciUtente2 = null;
 		String amiciComune = "";

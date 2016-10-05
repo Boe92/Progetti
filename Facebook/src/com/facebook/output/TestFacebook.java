@@ -32,7 +32,6 @@ public class TestFacebook {
 
 
 		f.getAmiciDiUnUtente(u1.getNome(), u1.getCognome());
-
 		
 		f.getAmiciDiAmici(u1.getNome(), u1.getCognome());
 		
