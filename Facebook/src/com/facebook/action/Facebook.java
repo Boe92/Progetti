@@ -87,7 +87,6 @@ public class Facebook extends Utente {
 			
 			if ( utente != null && amico != null){
 				utente.inserisciAmico(amico);
-				//System.out.println(utente.getNome()+" e "+amico.getNome()+" hanno stretto amicizia");
 				amico.inserisciAmico(utente);
 				System.out.println(amico.getNome()+" e "+utente.getNome()+" hanno stretto amicizia");
 			}
