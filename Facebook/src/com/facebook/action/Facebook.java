@@ -135,6 +135,50 @@ public class Facebook extends Utente {
 		}
 	}
 	
+	public void getAmiciInComune(String utente1, String utente2){
+		
+		Utente utente = null;
+		List<Utente> amiciUtente1 = null;
+		List<Utente> amiciUtente2 = null;
+		String amiciComune = "";
+		
+		System.out.println();
+		
+		//lista amici di utente 1 
+		for (Utente u : listaUtenti){
+			if (u.getNome() == utente1) {
+				utente = u;
+				amiciUtente1 = utente.getListaAmici();
+				for(Utente u2: amiciUtente1){
+					if(!u2.getNome().equals(utente2)) {
+						System.out.println("primo ciclo: "+u2.getNome()+" "+u2.getCognome());
+					}
+				}
+			}
+		}
+		//lista amici di utente 2 
+		for (Utente u : listaUtenti){
+			if (u.getNome() == utente2) {
+				utente = u;
+				amiciUtente2 = utente.getListaAmici();
+				for(Utente u2: amiciUtente2){
+					if(!u2.getNome().equals(utente1)) {
+						System.out.println("secondo ciclo: "+u2.getNome()+" "+u2.getCognome());
+					}
+				}
+			}
+		}
+		//amici in comune 
+		for(Utente u: amiciUtente1){
+			for(Utente u2: amiciUtente2) {
+				if (u.getNome() == u2.getNome()){
+					amiciComune = u2.getNome()+" "+u2.getCognome()+" ";
+					System.out.println("terzo ciclo: "+amiciComune);
+				}
+			}
+		}
+	}
+	
 	public List<Utente> getListaUtenti() {
 		return listaUtenti;
 	}

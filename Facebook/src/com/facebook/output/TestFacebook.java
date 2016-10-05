@@ -10,10 +10,10 @@ public class TestFacebook {
 		Facebook f = new Facebook();
 
 		Utente u1 = new Utente("Marco", "Boemi",24, 'M', "aaaa@aaa.com");
-		Utente u2 = new Utente("aaa", "Boemi",24, 'M', "aaaa@aaa.com");
-		Utente u3 = new Utente("bbb", "Boemi",24, 'M', "aaaa@aaa.com");
-		Utente u4 = new Utente("dddd", "dddd", 12, 'M', "aaaa@aaa.com");
-		Utente u5 = new Utente("eeeee", "eeee", 28, 'F', "aaaa@aaa.com");
+		Utente u2 = new Utente("Luca", "Boemi",24, 'M', "aaaa@aaa.com");
+		Utente u3 = new Utente("Fabrizio", "Boemi",24, 'M', "aaaa@aaa.com");
+		Utente u4 = new Utente("Davide", "Boemi", 12, 'M', "aaaa@aaa.com");
+		Utente u5 = new Utente("Giancarlo", "Boemi", 28, 'M', "aaaa@aaa.com");
 
 		
 		f.registraUtente(u1.getNome(), u1.getCognome(),u1.getEta(), u1.getSesso(), u1.getEmail());
@@ -24,16 +24,22 @@ public class TestFacebook {
 		
 		
 		f.aggiungiAmici(u1.getNome() + " " + u1.getCognome(), u2.getNome() + " " + u2.getCognome());
+		f.aggiungiAmici(u1.getNome() + " " + u1.getCognome(), u4.getNome() + " " + u4.getCognome());
 		f.aggiungiAmici(u1.getNome() + " " + u1.getCognome(), u3.getNome() + " " + u3.getCognome());
+		f.aggiungiAmici(u1.getNome() + " " + u1.getCognome(), u5.getNome() + " " + u5.getCognome());
+		f.aggiungiAmici(u2.getNome() + " " + u2.getCognome(), u3.getNome() + " " + u3.getCognome());
+		//f.aggiungiAmici(u2.getNome() + " " + u2.getCognome(), u3.getNome() + " " + u3.getCognome());
 		f.aggiungiAmici(u2.getNome() + " " + u2.getCognome(), u4.getNome() + " " + u4.getCognome());
 		f.aggiungiAmici(u4.getNome() + " " + u4.getCognome(), u5.getNome() + " " + u5.getCognome());
-		f.aggiungiAmici(u3.getNome() + " " + u3.getCognome(), u5.getNome() + " " + u5.getCognome());
+//		f.aggiungiAmici(u1.getNome() + " " + u1.getCognome(), u5.getNome() + " " + u5.getCognome());
 
 
-		f.getAmiciDiUnUtente("Marco","Boemi");
+		f.getAmiciDiUnUtente(u1.getNome(), u1.getCognome());
 
 		
-		f.getAmiciDiAmici("Marco", "Boemi");
+		f.getAmiciDiAmici(u1.getNome(), u1.getCognome());
+		
+		f.getAmiciInComune(u1.getNome(), u2.getNome());
 
 	}
 }
