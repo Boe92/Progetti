@@ -24,14 +24,11 @@ public class TestFacebook {
 		
 		
 		f.aggiungiAmici(u1.getNome() + " " + u1.getCognome(), u2.getNome() + " " + u2.getCognome());
-		f.aggiungiAmici(u1.getNome() + " " + u1.getCognome(), u4.getNome() + " " + u4.getCognome());
 		f.aggiungiAmici(u1.getNome() + " " + u1.getCognome(), u3.getNome() + " " + u3.getCognome());
+		f.aggiungiAmici(u1.getNome() + " " + u1.getCognome(), u4.getNome() + " " + u4.getCognome());
 		f.aggiungiAmici(u1.getNome() + " " + u1.getCognome(), u5.getNome() + " " + u5.getCognome());
 		f.aggiungiAmici(u2.getNome() + " " + u2.getCognome(), u3.getNome() + " " + u3.getCognome());
-		//f.aggiungiAmici(u2.getNome() + " " + u2.getCognome(), u3.getNome() + " " + u3.getCognome());
 		f.aggiungiAmici(u2.getNome() + " " + u2.getCognome(), u4.getNome() + " " + u4.getCognome());
-		f.aggiungiAmici(u4.getNome() + " " + u4.getCognome(), u5.getNome() + " " + u5.getCognome());
-//		f.aggiungiAmici(u1.getNome() + " " + u1.getCognome(), u5.getNome() + " " + u5.getCognome());
 
 
 		f.getAmiciDiUnUtente(u1.getNome(), u1.getCognome());

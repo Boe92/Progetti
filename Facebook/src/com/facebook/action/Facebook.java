@@ -40,9 +40,13 @@ public class Facebook extends Utente {
 				for (Utente u : listaUtenti){
 					if (u.getNome().equals(nome) && u.getCognome().equals(cognome) && u.getEta()==eta && u.getSesso()==sesso && u.getEmail().equals(email)){
 						presente = true;
+						System.out.println("Utente gia registrato!");
 						break;
 					}else {	
+						listaUtenti.add(utente);
+						System.out.println("Registrazione avvenuta!");
 						presente = false;
+						break;
 					}
 				}
 				if (presente) {
@@ -137,7 +141,7 @@ public class Facebook extends Utente {
 	//
 	public void getAmiciInComune(String utente1, String utente2){
 		
-		Utente utente = null;
+		//Utente utente = null;
 		List<Utente> amiciUtente1 = null;
 		List<Utente> amiciUtente2 = null;
 		String amiciComune = "";
@@ -147,33 +151,22 @@ public class Facebook extends Utente {
 		//lista amici di utente 1 
 		for (Utente u : listaUtenti){
 			if (u.getNome() == utente1) {
-				utente = u;
-				amiciUtente1 = utente.getListaAmici();
-				for(Utente u2: amiciUtente1){
-					if(!u2.getNome().equals(utente2)) {
-						System.out.println("primo ciclo: "+u2.getNome()+" "+u2.getCognome());
-					}
-				}
+				amiciUtente1 = u.getListaAmici();
 			}
 		}
 		//lista amici di utente 2 
 		for (Utente u : listaUtenti){
 			if (u.getNome() == utente2) {
-				utente = u;
-				amiciUtente2 = utente.getListaAmici();
-				for(Utente u2: amiciUtente2){
-					if(!u2.getNome().equals(utente1)) {
-						System.out.println("secondo ciclo: "+u2.getNome()+" "+u2.getCognome());
-					}
-				}
+				amiciUtente2 = u.getListaAmici();
 			}
 		}
 		//amici in comune 
-		for(Utente u: amiciUtente1){
+		System.out.println("Gli amici in comune di "+utente1+" e di "+utente2+" sono: ");
+		for(Utente u: amiciUtente1) {
 			for(Utente u2: amiciUtente2) {
-				if (u.getNome() == u2.getNome()){
-					amiciComune = u2.getNome()+" "+u2.getCognome()+" ";
-					System.out.println("terzo ciclo: "+amiciComune);
+				if (u2.getNome() == u.getNome()){
+					amiciComune = u2.getNome()+" "+u2.getCognome();
+					System.out.println(amiciComune);
 				}
 			}
 		}
