@@ -134,7 +134,7 @@ public class Facebook extends Utente {
 			}
 		}
 	}
-	
+	//
 	public void getAmiciInComune(String utente1, String utente2){
 		
 		Utente utente = null;
