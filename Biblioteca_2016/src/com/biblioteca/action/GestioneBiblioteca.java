@@ -17,8 +17,8 @@ public class GestioneBiblioteca {
 		if (libri.size() > 0) {
 			for(Libro l1: libri){
 				if(autore.equals(l1.getAutore()) && titolo.equals(l1.getTitolo())) {
-					l1.setCopieTotali(l1.getCopieTotali() + cp);
-					l1.setCopieDisponibili(l1.getCopieDisponibili() + cp);
+					//l1.setCopieTotali(l1.getCopieTotali() + cp);
+					//l1.setCopieDisponibili(l1.getCopieDisponibili() + cp);
 					break;
 				}else {
 					libro = new Libro(autore, titolo);
