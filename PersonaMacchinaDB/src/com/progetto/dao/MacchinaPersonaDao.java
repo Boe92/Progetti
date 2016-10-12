@@ -52,6 +52,10 @@ public class MacchinaPersonaDao {
 							" inner join macchina m on m.ID_MACCHINA = mp.ID_MACCHINA_FK"						+ 
 							" inner join persona p on p.ID_PERSONA = mp.ID_PERSONA_FK"							+
 							" where mp.ID_persona_fk = (SELECT id_persona FROM persona where id_persona = ?)";
+			
+//			String sql = 	"select m.id_macchina, m.modello, m.targa"	+
+//							" from macchina m, MACCHINAPERSONA mp"		+
+//							" WHERE m.ID_MACCHINA = mp.ID_MACCHINA_FK and mp.ID_PERSONA_FK = ?";
 			psmt = conn.prepareStatement(sql);
 			psmt.setInt(1, id_persona);
 			rs = psmt.executeQuery();
