@@ -68,7 +68,7 @@ public class RubricaDao {
 	
 	public int getIdRubrica() {
 		int id = 0;
-		String sql = "SELECT ID_RUBRICA FROM RUBRICA";
+		String sql = "SELECT max(ID_RUBRICA) FROM RUBRICA";
 		try {
 			psmt = conn.prepareStatement(sql);
 			rs = psmt.executeQuery();
