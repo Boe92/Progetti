@@ -130,7 +130,7 @@ public class PersonaDao {
 	
 	public int getLastInsertIdPersona() {
 		int id = 0;
-		String sql = "select id_persona from persona";
+		String sql = "select max(id_persona) from persona";
 		try {
 			psmt = conn.prepareStatement(sql);
 			rs = psmt.executeQuery();

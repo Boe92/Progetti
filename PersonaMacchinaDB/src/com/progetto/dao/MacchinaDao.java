@@ -125,7 +125,7 @@ public class MacchinaDao {
 	
 	public int getLastInsertIdMacchina() {
 		int id = 0;
-		String sql = "select id_macchina from macchina";
+		String sql = "select max(id_macchina) from macchina";
 		try {
 			psmt = conn.prepareStatement(sql);
 			rs = psmt.executeQuery();
