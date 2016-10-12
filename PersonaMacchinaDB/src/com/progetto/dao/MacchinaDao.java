@@ -129,7 +129,7 @@ public class MacchinaDao {
 		try {
 			psmt = conn.prepareStatement(sql);
 			rs = psmt.executeQuery();
-			while(rs.next()){
+			if(rs.next()){
 				id = rs.getInt(1);
 			}
 		} catch (SQLException e) {
