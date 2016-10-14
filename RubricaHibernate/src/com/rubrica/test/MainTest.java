@@ -39,7 +39,5 @@ public class MainTest {
 		}finally{
 			session.close();
 		}
-
 	}
-
 }
