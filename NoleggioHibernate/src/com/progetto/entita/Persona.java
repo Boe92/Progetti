@@ -16,8 +16,6 @@ public class Persona {
 	private int id_persona;
 	@Column(name="nome")
 	private String nome;
-	
-
 	@Column(name="cognome")
 	private String cognome;
 	@Column(name="CF")
