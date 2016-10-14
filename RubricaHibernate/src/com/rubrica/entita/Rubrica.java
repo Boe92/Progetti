@@ -4,7 +4,9 @@ import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.Column;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -19,6 +21,7 @@ public class Rubrica {
 	private String nome;
 	
 	@OneToMany
+	@ElementCollection(fetch=FetchType.EAGER)
 	private Set<Voce> voci = new HashSet<Voce>();
 	
 	public Rubrica() {}

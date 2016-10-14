@@ -8,12 +8,12 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import com.rubrica.connDao.DataSource;
+import com.rubrica.entita.Voce;
 
 public class RubricaDao {
 	Connection conn = null;
 	PreparedStatement psmt = null;
 	ResultSet rs = null;
-	
 	
 	public void _select(int id_rubrica) {
 		try {
