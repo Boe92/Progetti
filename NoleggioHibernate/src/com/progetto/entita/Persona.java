@@ -7,12 +7,15 @@ import javax.persistence.Column;
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 @Entity @Table(name="Persona") 
 public class Persona {
-	@Column(name="id_persona")
+	@Id @GeneratedValue(strategy=GenerationType.AUTO)
 	private int id_persona;
 	@Column(name="nome")
 	private String nome;
@@ -22,7 +25,7 @@ public class Persona {
 	private String CF;
 	
 	
-	@ManyToMany
+	@ManyToMany(mappedBy="persona")
 	@ElementCollection(fetch=FetchType.EAGER)
 	private Set<Macchina> macchina = new HashSet<Macchina>();
 	

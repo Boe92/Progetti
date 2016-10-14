@@ -13,7 +13,8 @@ import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
-@Entity @Table(name="Macchina") 
+@Entity 
+@Table(name="Macchina") 
 public class Macchina {
 	@Id @GeneratedValue(strategy=GenerationType.AUTO)
 	private int id_macchina;
@@ -23,7 +24,7 @@ public class Macchina {
 	private String targa;
 	
 	
-	@ManyToMany
+	@ManyToMany(mappedBy="macchina")
 	@ElementCollection(fetch=FetchType.EAGER)
 	private Set<Persona> persona = new HashSet<Persona>();
 

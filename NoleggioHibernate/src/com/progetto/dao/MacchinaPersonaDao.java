@@ -23,6 +23,7 @@ public class MacchinaPersonaDao {
 			tx.begin();
 			
 			session.save(m);
+			session.save(p);
 			
 			tx.commit(); 
 		}catch(Exception ex){
