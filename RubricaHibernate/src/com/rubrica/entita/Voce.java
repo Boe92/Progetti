@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity @Table(name="Voce")
@@ -18,6 +19,8 @@ public class Voce {
 	@Column(name="telefono")
 	private String telefono;
 	
+	@ManyToOne
+	private Rubrica rubrica;
 	
 	public Voce() {}
 	
@@ -51,6 +54,14 @@ public class Voce {
 	}
 	public void setTelefono(String telefono) {
 		this.telefono = telefono;
+	}
+
+	public Rubrica getRubrica() {
+		return rubrica;
+	}
+
+	public void setRubrica(Rubrica rubrica) {
+		this.rubrica = rubrica;
 	}
 	
 	
