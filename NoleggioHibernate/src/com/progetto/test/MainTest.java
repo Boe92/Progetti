@@ -26,6 +26,5 @@ public class MainTest {
 		p1.addMacchina(m1);
 		p1.addMacchina(m2);
 		p1.addMacchina(m3);
-
 	}
 }

@@ -9,8 +9,8 @@
 		<property name="connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
 		
 		<property name="connection.url">jdbc:oracle:thin:@localhost:1521:xe</property> 
-		<property name="connection.username">rh</property>
-		<property name="connection.password">rh</property>
+		<property name="connection.username">noleggioH</property>
+		<property name="connection.password">noleggioH</property>
 		
 		<!-- JDBC connection pool (use the built-in) -->
 		<property name="connection.pool_size">1</property>
@@ -27,7 +27,7 @@
 		<property name="hbm2ddl.auto">update</property>
 		
 		<!-- Entita -->
-		<mapping class="com.rubrica.entita.Macchina" />
-		<mapping class="com.rubrica.entita.Persona" />
+		<mapping class="com.progetto.entita.Macchina" />
+		<mapping class="com.progetto.entita.Persona" />
 	</session-factory>
 </hibernate-configuration>

@@ -7,7 +7,7 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 import com.progetto.entita.Persona;
-import com.rubrica.util.HibernateUtil;
+import com.progetto.util.HibernateUtil;
 
 public class PersonaDao {
 	

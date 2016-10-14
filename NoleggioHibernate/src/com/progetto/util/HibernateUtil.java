@@ -1,4 +1,4 @@
-package com.rubrica.util;
+package com.progetto.util;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
