@@ -1,8 +1,5 @@
 package com.progetto.dao;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,9 +11,6 @@ import com.progetto.entita.Persona;
 import com.progetto.util.HibernateUtil;
 
 public class MacchinaPersonaDao {
-	Connection conn = null;
-	PreparedStatement psmt = null;
-	ResultSet rs = null;
 	
 	public boolean _insert(Macchina m, Persona p) {
 		boolean res = false;
