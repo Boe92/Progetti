@@ -33,18 +33,37 @@ public class MainTest {
 		p1.addMacchina(m2);
 		p1.addMacchina(m3);
 		
-		s.assegnaPersonaMacchina(m1, p1);
+		p2.addMacchina(m1);
+		p2.addMacchina(m2);
+		p2.addMacchina(m3);
 		
-		List<Macchina> listaMacchina = s.getTutteMacchinePerPersona(5);
+		p3.addMacchina(m1);
+		p3.addMacchina(m2);
+		p3.addMacchina(m3);
+		
+		s.assegnaPersonaMacchina(m1, p1);
+		s.assegnaPersonaMacchina(m2, p1);
+		s.assegnaPersonaMacchina(m3, p1);
+		
+		s.assegnaPersonaMacchina(m1, p2);
+		s.assegnaPersonaMacchina(m2, p2);
+		s.assegnaPersonaMacchina(m3, p2);
+		
+		Persona pers = s.getPersona(8);
+		System.out.println(pers.getId_persona()+" "+pers.getNome()+" "+pers.getCognome()+" "+pers.getCF());
+		
+		
+		
+		//getTutteMacchinePerPersona
+		for(Macchina m: pers.getMacchina()){
+			System.out.println(m.getModello()+" "+m.getTarga());
+		}
+		
 		
 		List<Persona> listaPersone = s.getTuttePersone();
-		
 		for(Persona p:listaPersone) {
-			System.out.print(p.getNome()+" "+p.getCognome()+" "+p.getCF());
+			System.out.println(p.getId_persona()+" "+p.getNome()+" "+p.getCognome()+" "+p.getCF());
 		}
-		
-		for(Macchina m:listaMacchina) {
-			System.out.print(m.getModello()+" "+m.getTarga());
-		}
+
 	}
 }

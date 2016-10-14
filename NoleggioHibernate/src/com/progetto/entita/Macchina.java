@@ -4,7 +4,6 @@ import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.Column;
-import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -13,8 +12,7 @@ import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
-@Entity 
-@Table(name="Macchina") 
+@Entity @Table(name="Macchina") 
 public class Macchina {
 	@Id @GeneratedValue(strategy=GenerationType.AUTO)
 	private int id_macchina;
@@ -24,8 +22,8 @@ public class Macchina {
 	private String targa;
 	
 	
-	@ManyToMany(mappedBy="macchina")
-	@ElementCollection(fetch=FetchType.EAGER)
+	
+	@ManyToMany(fetch=FetchType.EAGER)
 	private Set<Persona> persona = new HashSet<Persona>();
 
 	public Macchina() {}

@@ -1,8 +1,8 @@
 package com.progetto.dao;
 
-import java.util.ArrayList;
 import java.util.List;
 
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
@@ -21,7 +21,10 @@ public class PersonaDao {
 			tx=session.getTransaction();
 			tx.begin();
 			
+			Query query = (Query) session.createQuery("from Persona where id_persona = :campo1"); 
+			query.setInteger("campo1", id_persona);
 			
+			p = (Persona) query.uniqueResult();
 			
 			tx.commit(); 
 		}catch(Exception ex){
@@ -33,17 +36,20 @@ public class PersonaDao {
 		return p;
 	}
 	
+
+	@SuppressWarnings("unchecked")
 	public List<Persona> _selectAll() {
 		
-		List<Persona> listaPersone = new ArrayList<>();
 		Session session = HibernateUtil.openSession();
 		Transaction tx = null;
 		
+		List<Persona> listaPersona = null;
 		try{
 			tx=session.getTransaction();
 			tx.begin();
 			
-			
+			Query query = (Query) session.createQuery("from Persona"); 
+			listaPersona = (List<Persona>)query.list();	
 			
 			tx.commit(); 
 		}catch(Exception ex){
@@ -52,7 +58,7 @@ public class PersonaDao {
 			session.close();
 		}
 		
-		return listaPersone;
+		return listaPersona;
 	}
 	
 	public Persona _insert(Persona p) {

@@ -30,17 +30,18 @@ public class Servizio {
 		return res;
 	}
 	
-	public List<Macchina> getTutteMacchinePerPersona(int id_persona) {
-		MacchinaPersonaDao pm = new MacchinaPersonaDao();
-		List<Macchina> lista = pm.getTutteMacchinePerPersona(id_persona);
-		
-		return lista;
-	}
-	
 	public List<Persona> getTuttePersone() {
 		PersonaDao p = new PersonaDao();
 		List<Persona> lista = p._selectAll();
 		
 		return lista;
+	}
+	
+	public Persona getPersona(int id_persona) {
+		PersonaDao pd = new PersonaDao();
+		Persona p = pd._select(id_persona);
+		
+		return p;
+		
 	}
 }

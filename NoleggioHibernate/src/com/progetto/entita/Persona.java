@@ -4,7 +4,6 @@ import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.Column;
-import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -25,8 +24,7 @@ public class Persona {
 	private String CF;
 	
 	
-	@ManyToMany(mappedBy="persona")
-	@ElementCollection(fetch=FetchType.EAGER)
+	@ManyToMany(mappedBy="persona",fetch=FetchType.EAGER)
 	private Set<Macchina> macchina = new HashSet<Macchina>();
 	
 	public Persona() {}
