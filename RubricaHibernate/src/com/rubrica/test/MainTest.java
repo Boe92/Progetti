@@ -16,7 +16,6 @@ public class MainTest {
 		Voce v2 = new Voce(2,"Alberto","Boemi","3496451512");
 		Voce v3 = new Voce(3,"GianMario","Boemi","3496451512");
 		
-		
 		r.setNome("LucaRubrica");
 		v1.setRubrica(r);
 		v2.setRubrica(r);
@@ -30,7 +29,6 @@ public class MainTest {
 
 		va.aggiungiVoce(v1);
 		va.aggiungiVoce(v2);
-		va.aggiungiVoce(v3);
-		
+		va.aggiungiVoce(v3);	
 	}
 }
