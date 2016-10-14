@@ -1,9 +1,21 @@
 package com.rubrica.entita;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity @Table(name="Voce")
 public class Voce {
+	@Id @GeneratedValue(strategy=GenerationType.AUTO)
 	private int id_voce;
+	@Column(name="nome")
 	private String nome;
+	@Column(name="cognome")
 	private String cognome;
+	@Column(name="telefono")
 	private String telefono;
 	
 	

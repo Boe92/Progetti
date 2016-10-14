@@ -1,8 +1,25 @@
 package com.rubrica.entita;
 
+import java.util.HashSet;
+import java.util.Set;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
+@Entity @Table(name="Rubrica") 
 public class Rubrica {
+	@Id @GeneratedValue(strategy=GenerationType.AUTO)
 	private int id_rubrica;
+	@Column(name="nome")
 	private String nome;
+	
+	@OneToMany
+	private Set<Voce> voci = new HashSet<Voce>();
 	
 	public Rubrica() {}
 	
@@ -23,5 +40,15 @@ public class Rubrica {
 	public void setId_rubrica(int id_rubrica) {
 		this.id_rubrica = id_rubrica;
 	}
+	public Set<Voce> getVoci() {
+		return voci;
+	}
+
+	public void setVoci(Set<Voce> voci) {
+		this.voci = voci;
+	}
 	
+	public void addVoce(Voce v) {
+		this.voci.add(v);
+	}
 }
