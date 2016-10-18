@@ -37,7 +37,7 @@ public class Autentica extends HttpServlet {
 		String pwd = request.getParameter("pwd");
 		
 		if(pwd.equals("123")) {
-			String user = request.getParameter("user");
+			request.getParameter("user");
 			//HttpSession session = request.getSession();
 			//session.setAttribute("user", user);
 			
