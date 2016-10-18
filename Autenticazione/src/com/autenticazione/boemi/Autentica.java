@@ -44,7 +44,6 @@ public class Autentica extends HttpServlet {
 			session.setAttribute("user", user);
 			
 			rd2.forward(request, response);
-			//response.sendRedirect("loginSuccess.jsp");
 		}else {
 			pw.print("Password errata!");
 			rd.include(request, response);
