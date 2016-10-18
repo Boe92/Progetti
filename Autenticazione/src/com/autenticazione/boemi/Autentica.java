@@ -41,6 +41,7 @@ public class Autentica extends HttpServlet {
 			
 			rd2.forward(request, response);
 		}else {
+			response.setContentType("text/html");
 			RequestDispatcher rd = request.getRequestDispatcher("login.html"); 
 			PrintWriter pw = response.getWriter();
 			
