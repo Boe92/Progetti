@@ -14,14 +14,14 @@
 		user = (String)session.getAttribute("user");
 		if(user!= null) {
 	%>
-		Benvenuto <%= user %> 
-		<form action="Logout" method="post">
-			<input type="submit" value="Logout" >
-		</form>
+			Benvenuto <%= user %> 
+			<form action="Logout" method="post">
+				<input type="submit" value="Logout" >
+			</form>
 	<%
 		} else { 
 	%>
-		Nome non recuperato dalla sessione
+			<h2>Errore: Nome non recuperato dalla sessione</h2>
 	<%
 		}
 	%>
