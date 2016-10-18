@@ -11,9 +11,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-/**
- * Servlet implementation class Autentica
- */
 @WebServlet("/Autentica")
 public class Autentica extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -31,13 +28,12 @@ public class Autentica extends HttpServlet {
 
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		RequestDispatcher rd = request.getRequestDispatcher("login.html"); 
-		RequestDispatcher rd2 = request.getRequestDispatcher("loginSuccess.jsp"); 
-		PrintWriter pw = response.getWriter();
 		
+		//recupero password
 		String pwd = request.getParameter("pwd");
 		
 		if(pwd.equals("123")) {
+			RequestDispatcher rd2 = request.getRequestDispatcher("loginSuccess.jsp"); 
 			String user = request.getParameter("user");
 			
 			HttpSession session = request.getSession();
@@ -45,6 +41,9 @@ public class Autentica extends HttpServlet {
 			
 			rd2.forward(request, response);
 		}else {
+			RequestDispatcher rd = request.getRequestDispatcher("login.html"); 
+			PrintWriter pw = response.getWriter();
+			
 			pw.print("Password errata!");
 			rd.include(request, response);
 		}
