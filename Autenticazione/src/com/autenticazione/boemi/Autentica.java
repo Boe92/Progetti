@@ -28,25 +28,32 @@ public class Autentica extends HttpServlet {
 
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		PrintWriter pw = response.getWriter();
+		RequestDispatcher rd = request.getRequestDispatcher("login.html"); 
+		
+		response.setContentType("text/html");
 		
 		//recupero password
 		String pwd = request.getParameter("pwd");
+		//recupero user
+		String user = request.getParameter("user");
 		
-		if(pwd.equals("123")) {
+		if(user==null || user.isEmpty()) {
+			pw.print("User obbligatorio!");
+			rd.include(request, response);
+		}else if(pwd==null || pwd.isEmpty()) {
+			pw.print("Password obbligatoria!");
+			rd.include(request, response);
+		}else if(!pwd.equals("123")) {
+			pw.print("Password errata!");
+			rd.include(request, response);	
+		}else {
 			RequestDispatcher rd2 = request.getRequestDispatcher("loginSuccess.jsp"); 
-			String user = request.getParameter("user");
 			
 			HttpSession session = request.getSession();
 			session.setAttribute("user", user);
 			
 			rd2.forward(request, response);
-		}else {
-			response.setContentType("text/html");
-			RequestDispatcher rd = request.getRequestDispatcher("login.html"); 
-			PrintWriter pw = response.getWriter();
-			
-			pw.print("Password errata!");
-			rd.include(request, response);
 		}
 	}
 
