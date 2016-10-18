@@ -31,7 +31,7 @@ public class Logout extends HttpServlet {
 		session.removeAttribute("user");
 		
 		PrintWriter pw = response.getWriter();
-		pw.print("Logout Riuscito! ");
+		pw.print("Logout Riuscito! <a href='login.html'>Login</a>");
 	}
 
 }
