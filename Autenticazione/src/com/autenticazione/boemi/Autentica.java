@@ -31,6 +31,8 @@ public class Autentica extends HttpServlet {
 		
 		if(pwd.equals("123")) {
 			response.sendRedirect("benvenuto.html");
+		}else {
+			response.sendRedirect("login.html");
 		}
 	}
 
