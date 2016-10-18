@@ -1,6 +1,7 @@
 package com.autenticazione.boemi;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -27,11 +28,10 @@ public class Logout extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession();
 		
-		String nome = (String)session.getAttribute("user");
-		if(nome.equals("")) {
-			
-		}
+		session.removeAttribute("user");
 		
+		PrintWriter pw = response.getWriter();
+		pw.print("Logout Riuscito! ");
 	}
 
 }

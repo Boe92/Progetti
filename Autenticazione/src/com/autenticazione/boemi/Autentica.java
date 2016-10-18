@@ -31,20 +31,23 @@ public class Autentica extends HttpServlet {
 
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		RequestDispatcher rd = request.getRequestDispatcher("AutenticazionePass");  
-		
+		RequestDispatcher rd = request.getRequestDispatcher("login.html"); 
+		RequestDispatcher rd2 = request.getRequestDispatcher("loginSuccess.jsp"); 
+		PrintWriter pw = response.getWriter();
 		
 		String pwd = request.getParameter("pwd");
 		
 		if(pwd.equals("123")) {
-			request.getParameter("user");
-			//HttpSession session = request.getSession();
-			//session.setAttribute("user", user);
+			String user = request.getParameter("user");
 			
-			rd.forward(request, response);
+			HttpSession session = request.getSession();
+			session.setAttribute("user", user);
+			
+			rd2.forward(request, response);
 			//response.sendRedirect("loginSuccess.jsp");
 		}else {
-			response.sendRedirect("login.html");
+			pw.print("Password errata!");
+			rd.include(request, response);
 		}
 	}
 
