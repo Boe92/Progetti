@@ -13,7 +13,7 @@
 			<h1>Header</h1>
 		</div>
 		<div class="menu">
-  			<jsp:include page="menuCliente.jsp"></jsp:include>
+  			<jsp:include page="../include/menuCliente.jsp"></jsp:include>
 		</div>
     	<div id="content">
    			<h1>Welcom to Home Page </h1>
