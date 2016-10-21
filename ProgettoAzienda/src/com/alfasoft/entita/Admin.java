@@ -1,5 +1,8 @@
 package com.alfasoft.entita;
 
-public class Admin {
+import javax.persistence.Entity;
 
+@Entity
+public class Admin extends Utente{
+	
 }
