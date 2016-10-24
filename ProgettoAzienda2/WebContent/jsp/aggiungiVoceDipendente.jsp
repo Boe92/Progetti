@@ -16,7 +16,7 @@ $(document).ready(function() {
 		
 		
 		if(nome == "" || cognome == "" || telefono == ""){
-			$("#testo").append("*Campi obbligatori");
+			$("#testo").show();
 			return false;
 		}
 		
@@ -35,7 +35,7 @@ $(document).ready(function() {
     	<div id="content">
    			<h1>NUOVA VOCE DIPENDENTE</h1>
    			
-   			<div id="testo" style="color:red; display: none;"> </div>
+   			<div id="testo" style="color:red; display: none;"> *Campi obbligatori </div>
    			
    			<form action="doAggiungiVoceD.jsp" method="post">
    				Nome <input type="text" id="nome" name="nome"> <br>

@@ -13,8 +13,8 @@
 		String partitaIva = request.getParameter("partitaIva");
 		String rubrica = request.getParameter("rubrica");
 	
-		if((password!=null || !password.isEmpty()) && (nome!=null || !nome.isEmpty()) && 
-			(username!=null || !username.isEmpty()) && (partitaIva!=null || !partitaIva.isEmpty()) && (rubrica!=null || !rubrica.isEmpty())) {
+		if((password!=null && !password.isEmpty()) && (nome!=null && !nome.isEmpty()) && 
+			(username!=null && !username.isEmpty()) && (partitaIva!=null && !partitaIva.isEmpty()) && (rubrica!=null || !rubrica.isEmpty())) {
 			
 			boolean res = gs.registraCliente(nome, username, password, partitaIva, rubrica);
 			if (res) {

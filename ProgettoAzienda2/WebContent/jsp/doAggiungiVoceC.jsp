@@ -7,7 +7,10 @@
     	GestioneServizi gs = new GestioneServizi();
     	
     	HttpSession sessione = request.getSession();
-    	int idUtente = (int) sessione.getAttribute("IdUtente");
+    	int idUtente = (Integer)sessione.getAttribute("IdUtente");
+    	//Object obj = sessione.getAttribute("IdUtente");
+    	//String temp =  obj.toString();
+    	//int idUtente = Integer.parseInt(temp); //(int)sessione.getAttribute("IdUtente");
     	
     	String nome = request.getParameter("nome");
     	String cognome = request.getParameter("cognome");

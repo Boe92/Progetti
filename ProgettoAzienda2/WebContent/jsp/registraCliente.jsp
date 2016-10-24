@@ -17,7 +17,7 @@ $(document).ready(function() {
 		var rubrica = $("#rubrica").val();
 		
 		if(nome == "" || username == "" || password == "" || partitaIva == "" || rubrica == ""){
-			$("#testo").append("*Campi obbligatori");
+			$("#testo").show();
 			return false;
 		}
 		
@@ -36,7 +36,7 @@ $(document).ready(function() {
     	<div id="content">
     		<h2> Registra Cliente </h2>
     		
-    		<div id="testo" style="color:red; display: none;"> </div>
+    		<div id="testo" style="color:red; display: none;"> *Campi obbligatori </div>
    			
    			<form action="doRegistraCliente.jsp" method="post">
    				Nome<input type="text" id="nome" name="nome"> <br>
