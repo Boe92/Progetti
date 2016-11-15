@@ -1,0 +1,81 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+  <servlet>
+  	<servlet-name>ModificaCliente</servlet-name>
+  	<display-name>ModificaCliente</display-name>
+  	<description></description>
+  	<servlet-class>com.alfasoft.servlet.ModificaCliente</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>mo</servlet-name>
+  	<display-name>mo</display-name>
+  	<description>kkkkk</description>
+  	<servlet-class>com.alfasoft.servlet.mo</servlet-class>
+  	<init-param>
+  		<param-name>p</param-name>
+  		<param-value>p</param-value>
+  		<description>q</description>
+  	</init-param>
+  </servlet>
+  <servlet>
+  	<servlet-name>CercaContatto</servlet-name>
+  	<display-name>CercaContatto</display-name>
+  	<description>chiamato da ajax</description>
+  	<servlet-class>com.alfasoft.servlet.CercaContatto</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>ModificaClient</servlet-name>
+  	<display-name>ModificaClient</display-name>
+  	<description>questa è richiamata da ajax</description>
+  	<servlet-class>com.alfasoft.servlet.ModificaCliente</servlet-class>
+  	<init-param>
+  		<param-name>ModificaCliente</param-name>
+  		<param-value>/ModificaCliente</param-value>
+  		<description>questa e richiamata da ajax</description>
+  	</init-param>
+  </servlet>
+  <servlet>
+  	<servlet-name>Nonloso</servlet-name>
+  	<display-name>Nonloso</display-name>
+  	<description>aaaaaaaaa</description>
+  	<servlet-class>com.alfasoft.servlet.Nonloso</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>ModificaCliente2</servlet-name>
+  	<display-name>ModificaCliente2</display-name>
+  	<description></description>
+  	<servlet-class>com.alfasoft.servlet.ModificaCliente</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>ModificaCliente</servlet-name>
+  	<url-pattern>/ModificaCliente</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>mo</servlet-name>
+  	<url-pattern>/MK</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>CercaContatto</servlet-name>
+  	<url-pattern>/CercaContatto</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ModificaClient</servlet-name>
+  	<url-pattern>/ModificaClient</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>Nonloso</servlet-name>
+  	<url-pattern>/Nonloso</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>Nonloso</servlet-name>
+  	<url-pattern>/aaaaaaa</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ModificaCliente2</servlet-name>
+  	<url-pattern>/ModificaCliente2</url-pattern>
+  </servlet-mapping>
+</web-app>
