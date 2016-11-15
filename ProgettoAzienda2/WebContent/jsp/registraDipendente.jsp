@@ -6,6 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
 <link href="../css/style.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="../js/jquery-1.12.3.min.js"></script>
 <script>
 $(document).ready(function() {
 	$('#valida').click(function(event) {   
@@ -17,7 +18,7 @@ $(document).ready(function() {
 		var rubrica = $("#rubrica").val();
 		
 		if(nome == "" || cognome == "" || username == "" || password == "" || stipendio == "" || rubrica == ""){
-			$("#testo").append("*Campi obbligatori");
+			$("#testo").show();
 			return false;
 		}
 		
@@ -36,7 +37,7 @@ $(document).ready(function() {
     	<div id="content">
     		<h2> Registra Dipendente </h2>
     		
-    		<div id="testo" style="color:red; display: none;"> </div>
+    		<div id="testo" style="color:red; display: none;"> *Campi obbligatori </div>
    			
    			<form action="doRegistraDipendente.jsp" method="post">
    				Nome<input type="text" name="nome"> <br>

@@ -32,6 +32,12 @@ $(document).ready(function() {
 	</div>
 	<center>
    		<h2> LOGIN </h2>
+   		<% 
+   			if (request.getAttribute("errore")!=null) {
+   				out.print("<p color=\"red\">Username o Password errati</p>");
+   			}
+   		
+   		%>
    		<div id="testo" style="color:red; display: none;"> *Campi obbligatori </div>
   		<form action="doLogin.jsp" method="post">
 			<input type="text" id="username" name="username">
@@ -40,9 +46,6 @@ $(document).ready(function() {
 			<input type="submit" id="valida" value="Login">
 		</form>
 	</center>
-
-
-
 
 </body>
 </html>

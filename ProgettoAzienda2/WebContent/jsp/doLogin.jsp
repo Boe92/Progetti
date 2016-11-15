@@ -12,29 +12,35 @@
     	String username = request.getParameter("username");
 		String password = request.getParameter("password");
     	
-		if (username != null || !username.isEmpty() && password != null || !password.isEmpty()) {
+		if ((username != null && !username.isEmpty()) && (password != null && !password.isEmpty())) {
 			Utente u = gs.login(username, password);
-    		
-    		HttpSession sessione = request.getSession();
-    		sessione.setAttribute("IdUtente", u.getId_utente());
-    		
-    		System.out.println("ID_SESSIONE_UTENTE: " + sessione.getAttribute("IdUtente"));
-    		if(u.getRuolo()=='A') {
-    %>
-    			<jsp:forward page="homeAdmin.jsp"></jsp:forward>
-    <%
-    		}else if(u.getRuolo()=='C') {
-    			//Cliente c = gs.recuperoCliente(u.getId_utente());
-    			//sessione.setAttribute("IdRubricaCliente", c.getRubrica().getId_rubrica());
-    %>
-    			<jsp:forward page="homeCliente.jsp"></jsp:forward>
-    <%		
-    		}else if(u.getRuolo()=='D') {
-    			//Dipendente d = gs.recuperoDipendente(u.getId_utente());
-    			//sessione.setAttribute("IdRubricaDipendente", d.getRubrica().getId_rubrica());
-    %>
-    			<jsp:forward page="homeDipendente.jsp"></jsp:forward>
-    <%		
+    		if (u!=null) {
+	    		HttpSession sessione = request.getSession();
+	    		sessione.setAttribute("IdUtente", u.getId_utente());
+	    		
+	    		System.out.println("ID_SESSIONE_UTENTE: " + sessione.getAttribute("IdUtente"));
+	    		if(u.getRuolo()=='A') {
+	    %>
+	    			<jsp:forward page="homeAdmin.jsp"></jsp:forward>
+	    <%
+	    		}else if(u.getRuolo()=='C') {
+	    			//Cliente c = gs.recuperoCliente(u.getId_utente());
+	    			//sessione.setAttribute("IdRubricaCliente", c.getRubrica().getId_rubrica());
+	    %>
+	    			<jsp:forward page="homeCliente.jsp"></jsp:forward>
+	    <%		
+	    		}else if(u.getRuolo()=='D') {
+	    			//Dipendente d = gs.recuperoDipendente(u.getId_utente());
+	    			//sessione.setAttribute("IdRubricaDipendente", d.getRubrica().getId_rubrica());
+	    %>
+	    			<jsp:forward page="homeDipendente.jsp"></jsp:forward>
+	    <%		
+	    		}
+    		}else {
+    				request.setAttribute("errore", 1);
+    	%>
+    			<jsp:forward page="login.jsp"></jsp:forward>
+    	<%
     		}
 		} else {
 	%>
